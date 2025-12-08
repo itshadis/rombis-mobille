@@ -17,7 +17,12 @@ const TabLayout = () => {
 
   return (
     <View style={{marginTop: inset.top, flex: 1}}>
-      <Tabs>
+      <Tabs
+        screenOptions={{
+          sceneStyle: {
+            backgroundColor: '#ffffff',
+          },
+        }}>
         <Tabs.Screen 
           name='index'
           options={{
