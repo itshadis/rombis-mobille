@@ -1,6 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { ReactNode, useRef, useState } from "react";
 import { Animated, LayoutChangeEvent, TouchableOpacity, View } from "react-native";
+import Card from "./Card";
 
 interface CardCollapseProps {
   headerContent?: ReactNode;
@@ -40,7 +41,7 @@ const CardCollapse = ({ headerContent, children, className }: CardCollapseProps)
   };
 
   return (
-    <View className={["w-full border border-neutral-300 rounded-md", className].join(" ")}>
+    <Card className="p-4">
       <View className="flex-row justify-between">
         <View className="flex-1">{headerContent}</View>
       </View>
@@ -61,7 +62,7 @@ const CardCollapse = ({ headerContent, children, className }: CardCollapseProps)
 
         <View>{children}</View>
       </Animated.View>
-    </View>
+    </Card>
   );
 };
 
