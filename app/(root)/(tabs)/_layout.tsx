@@ -22,6 +22,8 @@ const TabLayout = () => {
           sceneStyle: {
             backgroundColor: '#ffffff',
           },
+        animation: "shift",
+        lazy: true
         }}>
         <Tabs.Screen 
           name='index'

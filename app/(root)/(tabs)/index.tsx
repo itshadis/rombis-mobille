@@ -33,7 +33,7 @@ const HomeScreen = () => {
       </View>
 
       <View>
-        <View className="flex-row justify-between mb-4">
+        <View className="flex-row justify-between items-center mb-4">
           <Text className="text-2xl font-semibold">Daftar Bus</Text>
           <TouchableOpacity>
             <Text className="text-red-600 font-semibold">Lihat Semua</Text>
@@ -42,7 +42,7 @@ const HomeScreen = () => {
 
         <ScrollView
           horizontal
-          snapToInterval={0} // 208 (card) + 16 (gap)
+          snapToInterval={0}
           snapToAlignment="start"
           showsHorizontalScrollIndicator={false}
           contentContainerClassName="flex-row gap-4"
