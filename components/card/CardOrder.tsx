@@ -22,6 +22,7 @@ interface CardOrderProps {
     estimasi: string;
     totalPembayaran: number;
   }
+  onPay?: (id: number, payment: number, tanggal: string) => void;
 }
 
 const STATUS_BAYAR: Record<number, string> = {
@@ -36,7 +37,7 @@ const LABEL_COLOR: Record<number, string> = {
   3: "#38b524",
 }
 
-const CardOrder = ({ data, children }: CardOrderProps) => {
+const CardOrder = ({ data, children, onPay }: CardOrderProps) => {
   return (
     <CardCollapse
       headerContent={
@@ -100,7 +101,10 @@ const CardOrder = ({ data, children }: CardOrderProps) => {
           </Card>
           <Text className="font-medium">Total Pembayaran : Rp {data.totalPembayaran}</Text>
         </View>
-        <TouchableOpacity className="bg-cyan-800 rounded-full py-3 mt">
+        <TouchableOpacity 
+          className="bg-cyan-800 rounded-full py-3 mt"
+          onPress={() => onPay?.(data.id, data.totalPembayaran, data.tanggalBerangkat)}
+        >
           <Text className="text-lg text-center text-white font-medium">Bayar</Text>
         </TouchableOpacity>
       </View>
