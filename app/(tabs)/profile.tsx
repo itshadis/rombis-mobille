@@ -1,16 +1,22 @@
 import Form from "@/components/form";
+import useAuthStore from "@/utils/authStore";
 import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import React from "react";
 import { Pressable, Text, TouchableOpacity, View } from "react-native";
 
 const ProfileScreen = () => {
+  const { logout } = useAuthStore()
+
   return (
     <View className="mx-4">
-      <View className="relative items-center justify-center h-16">
-        <TouchableOpacity className="absolute -left-2 top-[22%]">
-          <MaterialIcons name="keyboard-arrow-left" size={32} />
+      <View className="flex-row items-center justify-between h-16">
+        <TouchableOpacity>
+          <MaterialIcons name="keyboard-arrow-left" size={24} />
         </TouchableOpacity>
         <Text className="text-2xl font-semibold">Profile</Text>
+        <TouchableOpacity onPress={logout}>
+          <MaterialIcons name="logout" size={20} color="#cc352b" />
+        </TouchableOpacity>
       </View>
 
       <View className="items-center my-4">
